@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding.button.setOnClickListener {
             var text = binding.textInputLayout.editText?.text.toString()
             intent.putExtra("texto_int", text )
+            startActivity(intent)
         }
 
     }

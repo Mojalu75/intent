@@ -15,10 +15,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val intent = Intent(applicationContext, DataActivity::class.java)
-        setContentView(R.layout.activity_main)
+
+        setContentView(binding.main)
         binding.button.setOnClickListener {
-            var text = binding.textInputLayout.editText?.text.toString()
+            val text = binding.textInputLayout.editText?.text.toString()
+            val intent = Intent(applicationContext, DataActivity::class.java)
             intent.putExtra("texto_int", text )
             startActivity(intent)
         }
